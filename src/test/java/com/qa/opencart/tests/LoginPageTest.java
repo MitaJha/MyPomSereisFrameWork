@@ -48,6 +48,12 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertEquals(accPage.getAccPageTitle(), AppConstants.ACCOUNTS_PAGE_TITLE);
 	}
 	
+	@Severity(SeverityLevel.MINOR)
+	@Test
+	public void sanityTest() {
+		Assert.assertEquals(true,true);
+	}
+	
 	@Description("checking test is getting failed or not")
 	@Severity(SeverityLevel.MINOR)
 	@Test(enabled = false)
