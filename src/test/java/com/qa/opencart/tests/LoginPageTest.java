@@ -50,7 +50,7 @@ public class LoginPageTest extends BaseTest {
 	
 	@Description("checking test is getting failed or not")
 	@Severity(SeverityLevel.MINOR)
-	@Test
+	@Test(enabled = false)
 	public void failureTest() {
 		Assert.assertEquals(true, false);
 	}
