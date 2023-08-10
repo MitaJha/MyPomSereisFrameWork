@@ -33,7 +33,7 @@ pipeline{
 		     steps{
 			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 			git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
-			bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources\testrunners\testng_regression.xml
+			bat "mvn clean test -Dsurefire.suiteXmlFiles=\srcTestResources\testrunners\testng_regression.xml"
 		      }
 		   }
 		}
@@ -77,7 +77,7 @@ pipeline{
 		     steps{
 			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 			git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
-			bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources\testrunners\testng_sanity.xml
+			bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources\testrunners\testng_sanity.xml"
 		      }
 		   }
 		}
