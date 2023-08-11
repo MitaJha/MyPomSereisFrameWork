@@ -33,7 +33,7 @@ pipeline{
 		     steps{
 			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 			git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
-			bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources\testrunners\testng_regression.xml"
+			bat "mvn clean test -Dsurefire.suiteXmlFiles=src/mainResources/testrunners/testng_regression.xml"
 		      }
 		   }
 		}
@@ -46,7 +46,7 @@ pipeline{
 				jdk: '',
 				properties: [],
 				reportBuildPolicy: 'ALWAYS',
-				results: [[path: '/allure-rsults']]
+				results: [[path: '/allure-results']]
 				])
 			 }
 			
@@ -60,7 +60,8 @@ pipeline{
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
 				reportDir: 'reports',
-				reportFiles: 'TestExecutionReport.html'
+				reportFiles: 'TestExecutionReport.html',
+				reportTitles: ''
 				
 				])
 			 }
@@ -73,11 +74,11 @@ pipeline{
 		      }
 		}
 		
-		stage('Sanity Automation Tests'){
+		stage('Sanity Automation Test'){
 		     steps{
 			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
 			git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
-			bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources\testrunners\testng_sanity.xml"
+			bat "mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/testrunners/testng_sanity.xml"
 		      }
 		   }
 		}
@@ -90,12 +91,12 @@ pipeline{
 				keepAll: true,
 				reportDir: 'reports',
 				reportFiles: 'TestExecutionReport.html'
-				
+				reportTitles: ''
 				])
 			 }
 			
 		      }
 		}
 
-
- 	}
+	  }
+ 	
