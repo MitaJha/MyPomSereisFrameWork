@@ -60,8 +60,8 @@ pipeline{
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
 				reportDir: 'reports',
-				reportFiles: 'TestExecutionReport.html',
-				reportTitle: ''
+				reportFiles: 'TestExecutionReport.html'
+				
 				])
 			 }
 			
@@ -89,8 +89,8 @@ pipeline{
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
 				reportDir: 'reports',
-				reportFiles: 'TestExecutionReport.html',
-				reportTitle: ''
+				reportFiles: 'TestExecutionReport.html'
+				
 				])
 			 }
 			
