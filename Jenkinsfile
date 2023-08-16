@@ -38,7 +38,7 @@ pipeline
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git '//https://github.com/MitaJha/MyPomSereisFrameWork.git'
+                    git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources/testrunners/testng_regression.xml"
                                                     
                     
@@ -83,7 +83,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
+                    git 'https:github.com/MitaJha/MyPomSereisFrameWork.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources/testrunners/testng_sanity.xml"
                     
                 }
