@@ -26,10 +26,11 @@ public class OptionsManager {
 		if (Boolean.parseBoolean(prop.getProperty("incognito"))) {
 			co.addArguments("--incognito");
 		}
-		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
-			co.setCapability("browserName", "chrome");
-			//co.setCapability("enabeVNC", true);
-		}
+//		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			co.setCapability("browserName", "chrome");
+//			//co.setBrowserVersion(prop.getProperty("browserversion").trim());
+//			co.setCapability("enabeVNC", true);
+//		}
 		return co;
 
 	}
@@ -43,10 +44,11 @@ public class OptionsManager {
 			fo.addArguments("--incognito");
 		}
 		
-		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
-			fo.setCapability("browserName", "firefox");
-			fo.setCapability("enabeVNC", true);
-		}
+//		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			fo.setCapability("browserName", "firefox");
+//			//fo.setBrowserVersion(prop.getProperty("browserversion").trim());
+//			fo.setCapability("enabeVNC", true);
+//		}
 		return fo;
 	}
 
@@ -59,10 +61,10 @@ public class OptionsManager {
 			eo.addArguments("--incognito");
 		}
 		
-		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
-			eo.setCapability("browserName", "edge");
-			eo.setCapability("enabeVNC", true);
-		}
+//		if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			eo.setCapability("browserName", "edge");
+//			eo.setCapability("enabeVNC", true);
+//		}
 		return eo;
 
 	}
