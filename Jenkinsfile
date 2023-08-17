@@ -24,29 +24,23 @@ pipeline
                 }
             }
         }
-        
-        
-        
+       
         stage("Deploy to QA"){
             steps{
                 echo("deploy to qa")
             }
         }
-        
-        
-                
+               
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources/testrunners/testng_regression.xml"
-                                                    
-                    
+                  
                 }
             }
         }
-                
-     
+        
         stage('Publish Allure Reports') {
            steps {
                 script {
@@ -60,8 +54,7 @@ pipeline
                 }
             }
         }
-        
-        
+       
         stage('Publish Extent Report'){
             steps{
                      publishHTML([allowMissing: false,
@@ -78,12 +71,11 @@ pipeline
             steps{
                 echo("deploy to Stage")
             }
-        }
-        
+        }   
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https:github.com/MitaJha/MyPomSereisFrameWork.git'
+                    git 'https://github.com/MitaJha/MyPomSereisFrameWork.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=srcTestResources/testrunners/testng_sanity.xml"
                     
                 }
